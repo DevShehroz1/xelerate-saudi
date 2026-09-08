@@ -239,10 +239,10 @@ ul { list-style: none; }
   color: var(--light);
 }
 
-/* diagram container */
+/* diagram container — 1100px wide gives cards room without overlapping car */
 .services-diagram {
   position: relative;
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
   height: 580px;
 }
@@ -251,24 +251,14 @@ ul { list-style: none; }
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  width: 56%;
+  transform: translate(-50%, -52%);
+  width: 54%;
   object-fit: contain;
   pointer-events: none;
   z-index: 1;
 }
 
-/* SVG lines overlay */
-.connectors {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* service cards */
+/* service cards — dark glass, not silver */
 .scard {
   position: absolute;
   display: flex;
@@ -280,14 +270,17 @@ ul { list-style: none; }
   border-radius: 10px;
   z-index: 3;
 
-  border: 2px solid transparent;
+  /* dark solid base + subtle white center glow */
   background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0) 100%) padding-box,
-    linear-gradient(135deg, rgba(255,255,255,1.0) 0%, rgba(238,237,237,0.5) 100%) border-box;
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.12) 0%, transparent 65%),
+    rgba(22, 22, 22, 0.88);
 
+  border: 2px solid rgba(255,255,255,0.18);
   backdrop-filter: blur(42px);
   -webkit-backdrop-filter: blur(42px);
-  box-shadow: inset -5px -5px 250px 0px rgba(255,255,255,0.02);
+  box-shadow:
+    inset -5px -5px 250px 0px rgba(255,255,255,0.02),
+    inset 0 1px 0 rgba(255,255,255,0.10);
 }
 
 .scard-icon {
@@ -321,48 +314,58 @@ ul { list-style: none; }
   font-weight: 400;
   line-height: 29px;
   letter-spacing: -0.2px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.55);
   margin: 0;
 }
 
-/* card positions */
+/* card positions — 40px from top/bottom, flush to edges */
 .scard--tl { top: 40px;  left: 0; }
 .scard--tr { top: 40px;  right: 0; }
 .scard--bl { bottom: 40px; left: 0; }
 .scard--br { bottom: 40px; right: 0; }
 
-/* connector arrows */
+/* ── CONNECTOR ARROWS ───────────────────────────── */
+/* PNG sizes: TL=770×174, BL=686×268, TR=145×51, BR=94×142
+   Strategy: left edge of image = right edge of left card (x=248)
+             right edge of image = left edge of right card (x=852)
+   Arrow dots are at the far end closest to the car                */
 .arrow {
   position: absolute;
   pointer-events: none;
   z-index: 2;
 }
 
-/* TL arrow: starts at right edge of TL card, goes to car hood */
+/* TL (770×174): horizontal then diagonal down-right, dot at bottom-right
+   Displayed at width=270px → height=61px
+   Left edge aligns with card right (x=248), vertical center aligns with card middle */
 .arrow--tl {
   left: 248px;
-  top: 40px;
-  width: 240px;
+  top: 110px;    /* card top=40, card mid=140, arrow mid=140-61/2=109 */
+  width: 270px;
 }
 
-/* BL arrow: starts at right edge of BL card, goes up to car body */
+/* BL (686×268): diagonal from bottom-left up to top-right dot
+   Displayed at width=230px → height=90px
+   Left edge at card right (x=248), bottom at card bottom */
 .arrow--bl {
   left: 248px;
-  bottom: 40px;
-  width: 180px;
+  bottom: 110px;  /* card bottom=40, card mid=240, arrow bottom at card mid */
+  width: 230px;
 }
 
-/* TR arrow: starts at left edge of TR card, short line to car roof */
+/* TR (145×51): short line, dot at left/bottom
+   Right edge aligns with card left (x=852), scaled up to 190px → height=67px */
 .arrow--tr {
   right: 248px;
-  top: 40px;
-  width: 120px;
+  top: 108px;
+  width: 190px;
 }
 
-/* BR arrow: starts at left edge of BR card, goes down to car wheel */
+/* BR (94×142): portrait line going down to bottom-right
+   Right edge at card left (x=852), scaled to 120px → height=181px */
 .arrow--br {
   right: 248px;
-  bottom: 40px;
+  bottom: 100px;
   width: 120px;
 }
 
