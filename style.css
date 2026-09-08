@@ -384,17 +384,17 @@ ul { list-style: none; }
 .sgallery-bar {
   display: flex;
   align-items: center;
-  padding: 18px 40px;
+  justify-content: center;
+  padding: 48px 40px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
-.sgallery-eyebrow {
-  font-family: var(--font-secondary);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+.sgallery-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1.1;
 }
 
 /* flex accordion — hovered panel expands */
