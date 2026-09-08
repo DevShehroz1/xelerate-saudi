@@ -263,7 +263,7 @@ ul { list-style: none; }
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0;
   width: 248px;
   height: 200px;
   padding: 16px;
@@ -284,9 +284,17 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
+/* icon + title on same row */
+.scard-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
 .scard-icon {
-  width: 64px;
-  height: 64px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -294,16 +302,16 @@ ul { list-style: none; }
 }
 
 .scard-icon img {
-  width: 64px;
-  height: 64px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
 .scard-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 110%;
+  line-height: 120%;
   letter-spacing: 0;
   color: var(--light);
   margin: 0;
@@ -337,12 +345,10 @@ ul { list-style: none; }
   z-index: 2;
 }
 
-/* TL (770×174): horizontal then diagonal down-right, dot at bottom-right
-   Displayed at width=270px → height=61px
-   Left edge aligns with card right (x=248), vertical center aligns with card middle */
+/* TL (770×174): horizontal then diagonal down-right, dot at bottom-right */
 .arrow--tl {
   left: 248px;
-  top: 110px;    /* card top=40, card mid=140, arrow mid=140-61/2=109 */
+  top: 155px;
   width: 270px;
 }
 
