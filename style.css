@@ -347,6 +347,41 @@ ul { list-style: none; }
 .scard--bl { bottom: 40px; left: 0; }
 .scard--br { bottom: 40px; right: 0; }
 
+/* connector arrows */
+.arrow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* TL arrow: starts at right edge of TL card, goes to car hood */
+.arrow--tl {
+  left: 248px;
+  top: 40px;
+  width: 240px;
+}
+
+/* BL arrow: starts at right edge of BL card, goes up to car body */
+.arrow--bl {
+  left: 248px;
+  bottom: 40px;
+  width: 180px;
+}
+
+/* TR arrow: starts at left edge of TR card, short line to car roof */
+.arrow--tr {
+  right: 248px;
+  top: 40px;
+  width: 120px;
+}
+
+/* BR arrow: starts at left edge of BR card, goes down to car wheel */
+.arrow--br {
+  right: 248px;
+  bottom: 40px;
+  width: 120px;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
