@@ -218,20 +218,25 @@ ul { list-style: none; }
 
 .section-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  font-style: normal;
+  line-height: 110%;
+  letter-spacing: 0.1em;
+  text-align: center;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .section-heading {
-  font-family: var(--font-primary);
-  font-size: clamp(40px, 6vw, 72px);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 80px;
   font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 0;
+  text-align: center;
   color: var(--light);
-  line-height: 1.05;
 }
 
 /* diagram container */
@@ -239,7 +244,7 @@ ul { list-style: none; }
   position: relative;
   max-width: 960px;
   margin: 0 auto;
-  height: 560px;
+  height: 580px;
 }
 
 .services-car {
@@ -247,9 +252,10 @@ ul { list-style: none; }
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 58%;
+  width: 56%;
   object-fit: contain;
   pointer-events: none;
+  z-index: 1;
 }
 
 /* SVG lines overlay */
@@ -259,54 +265,86 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 2;
 }
 
 /* service cards */
 .scard {
   position: absolute;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.09);
-  border-radius: 14px;
-  padding: 20px;
-  width: 200px;
-  backdrop-filter: blur(6px);
+  flex-direction: column;
+  gap: 8px;
+  width: 248px;
+  height: 200px;
+  padding: 16px;
+  border-radius: 10px;
+  z-index: 3;
+
+  /* radial gradient fill */
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0) 100%),
+              rgba(18, 18, 18, 0.55);
+
+  /* gradient border via pseudo-element below */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+
+  /* backdrop blur */
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(42px);
+
+  /* inner shadow */
+  box-shadow: inset -5px -5px 250px 0px rgba(255,255,255,0.02);
+}
+
+/* gradient border */
+.scard::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(238,237,237,0.5) 100%);
+  z-index: -1;
 }
 
 .scard-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(30,144,255,0.12);
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.scard-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
 .scard-title {
-  font-family: var(--font-primary);
-  font-size: 17px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
   font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 0;
   color: var(--light);
-  line-height: 1.2;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .scard-desc {
-  font-family: var(--font-secondary);
-  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
   font-weight: 400;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.55;
+  line-height: 29px;
+  letter-spacing: -0.2px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
 }
 
 /* card positions */
-.scard--tl { top: 60px;  left: 0; }
+.scard--tl { top: 40px;  left: 0; }
 .scard--tr { top: 40px;  right: 0; }
-.scard--bl { bottom: 60px; left: 0; }
+.scard--bl { bottom: 40px; left: 0; }
 .scard--br { bottom: 40px; right: 0; }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
