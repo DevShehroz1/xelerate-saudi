@@ -177,9 +177,9 @@ ul { list-style: none; }
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
-  gap: 83px;
-  padding: 0 120px 48px;
+  justify-content: center;
+  gap: 140px;
+  padding: 0 80px 48px;
 }
 
 .stat {
