@@ -376,6 +376,110 @@ ul { list-style: none; }
   width: 120px;
 }
 
+/* ── SERVICES GALLERY ───────────────────────────── */
+.sgallery {
+  background: #0d0d0d;
+}
+
+.sgallery-bar {
+  display: flex;
+  align-items: center;
+  padding: 18px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.sgallery-eyebrow {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.sgallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 88vh;
+  min-height: 560px;
+}
+
+.sgallery-panel {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 20px 28px 56px;
+}
+
+.sgallery-panel:last-child { border-right: none; }
+
+.sgallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.45) 100%);
+  z-index: 0;
+}
+
+/* rotated title on left edge */
+.sgallery-title {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  white-space: nowrap;
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light);
+  z-index: 1;
+}
+
+.sgallery-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sgallery-tag {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  max-width: 160px;
+}
+
+.sgallery-btn {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 100px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  width: fit-content;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.sgallery-btn:hover {
+  border-color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
