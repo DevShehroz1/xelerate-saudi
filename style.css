@@ -91,7 +91,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
 
-  background-image: url('hero-bg.jpg');
+  background-image: url('hero-bg.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
