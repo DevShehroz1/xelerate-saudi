@@ -535,6 +535,63 @@ ul { list-style: none; }
   background: rgba(254,205,25,0.06);
 }
 
+/* ── CTA BANNER ─────────────────────────────────── */
+.cta-section {
+  background: var(--dark);
+  padding: 80px 60px;
+}
+
+.cta-banner {
+  border-radius: 16px;
+  overflow: hidden;
+  background-image: url('banner-bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+
+.cta-text {
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+
+.cta-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--light);
+}
+
+.cta-sub {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--light);
+  transition: gap 0.2s, color 0.2s;
+}
+
+.cta-link:hover {
+  gap: 12px;
+  color: #fecd19;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
