@@ -347,7 +347,7 @@ ul { list-style: none; }
 /* TL (770×174): horizontal then diagonal down-right, dot at bottom-right */
 .arrow--tl {
   left: 248px;
-  top: 155px;
+  top: 120px;
   width: 270px;
 }
 
