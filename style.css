@@ -144,7 +144,7 @@ ul { list-style: none; }
   text-transform: none;
 }
 
-.accent { color: var(--blue); }
+.accent { color: #fecd19; }
 
 /* ── CTA BUTTON ─────────────────────────────────── */
 .btn-cta {
@@ -178,7 +178,7 @@ ul { list-style: none; }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 64px;
+  gap: 83px;
   padding: 0 40px 48px;
 }
 
