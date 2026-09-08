@@ -41,13 +41,8 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
-.logo {
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--light);
-}
+.logo { display: flex; align-items: center; }
+.logo-img { height: 36px; width: auto; display: block; }
 
 .nav-links {
   display: flex;
@@ -70,9 +65,16 @@ ul { list-style: none; }
   font-size: 13px;
   font-weight: 500;
   color: var(--light);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 999px;
-  padding: 9px 22px;
+  border: 0.5px solid rgba(255,255,255,0.35);
+  border-radius: 10000000px;
+  width: 119px;
+  height: 48px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
   transition: border-color 0.2s, background 0.2s;
 }
 
@@ -143,15 +145,21 @@ ul { list-style: none; }
 
 /* ── CTA BUTTON ─────────────────────────────────── */
 .btn-cta {
-  display: inline-block;
-  background: var(--blue);
-  color: var(--light);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #fecd19;
+  color: #161616;
   font-family: var(--font-secondary);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  padding: 13px 30px;
-  border-radius: 999px;
+  width: 193px;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 10000000px;
+  white-space: nowrap;
   transition: opacity 0.2s, transform 0.2s;
 }
 
@@ -166,15 +174,15 @@ ul { list-style: none; }
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  gap: 0;
-  padding: 0 80px 40px;
+  justify-content: center;
+  gap: 64px;
+  padding: 0 40px 48px;
 }
 
 .stat {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  flex: 1;
 }
 
 .stat-num {
@@ -201,7 +209,7 @@ ul { list-style: none; }
 
   .stats-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 18px;
     padding: 0 24px 32px;
   }
