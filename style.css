@@ -827,6 +827,151 @@ ul { list-style: none; }
 
 .location-map iframe { display: block; }
 
+/* ── BOOKING + CONTACT ──────────────────────────── */
+.booking-section {
+  background: #0d0d0d;
+  padding: 100px 60px;
+}
+
+.booking-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: start;
+}
+
+.booking-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 40px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 14px 20px;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: var(--light);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-input::placeholder { color: rgba(255,255,255,0.35); }
+.form-input:focus { border-color: #fecd19; }
+
+/* date input color fix */
+.form-input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.4); cursor: pointer; }
+
+.form-select {
+  border-radius: 100px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 42px;
+}
+
+.form-select option { background: #1a1a1a; color: var(--light); }
+
+.form-textarea {
+  border-radius: 16px;
+  height: 120px;
+  resize: none;
+  padding: 16px 20px;
+}
+
+.booking-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fecd19;
+  color: #161616;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 36px;
+  width: fit-content;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 6px;
+}
+
+.booking-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.form-success {
+  display: none;
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  color: #fecd19;
+  line-height: 1.5;
+}
+
+/* right — contact */
+.contact-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 48px;
+}
+
+.contact-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-label {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fecd19;
+  margin-bottom: 4px;
+}
+
+.contact-val {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
 /* ── CTA BANNER ─────────────────────────────────── */
 .cta-section {
   background: var(--dark);

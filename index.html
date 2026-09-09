@@ -296,6 +296,63 @@
     </div>
   </section>
 
+  <!-- BOOKING + CONTACT -->
+  <section class="booking-section">
+    <div class="booking-inner">
+
+      <div class="booking-left">
+        <h2 class="booking-heading">Let's Book An<br />Appointment</h2>
+
+        <form class="booking-form" id="bookingForm" action="#" novalidate>
+          <div class="form-row">
+            <input class="form-input" type="text" name="name" placeholder="Name" required />
+            <input class="form-input" type="text" name="vehicle" placeholder="Vehicle type" />
+          </div>
+          <div class="form-row">
+            <input class="form-input" type="tel" name="phone" placeholder="Phone number*" required />
+            <input class="form-input" type="date" name="date" placeholder="Preferred service date" />
+          </div>
+          <div class="form-row">
+            <input class="form-input" type="email" name="email" placeholder="Email*" required />
+            <select class="form-input form-select" name="time">
+              <option value="" disabled selected>Preferred service time</option>
+              <option>08:00 AM – 10:00 AM</option>
+              <option>10:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 02:00 PM</option>
+              <option>02:00 PM – 04:00 PM</option>
+              <option>04:00 PM – 06:00 PM</option>
+            </select>
+          </div>
+          <textarea class="form-input form-textarea" name="message" placeholder="Any additional requests regarding your car?"></textarea>
+          <button type="submit" class="booking-btn">Submit Message</button>
+          <p class="form-success" id="formSuccess">Your booking request has been sent. We'll get back to you within 24 hours.</p>
+        </form>
+      </div>
+
+      <div class="booking-right">
+        <h2 class="contact-heading">Contact Us</h2>
+
+        <div class="contact-blocks">
+          <div class="contact-block">
+            <h4 class="contact-label">Phone</h4>
+            <p class="contact-val">+966 XX XXX XXXX</p>
+            <p class="contact-val">+966 XX XXX XXXX</p>
+          </div>
+          <div class="contact-block">
+            <h4 class="contact-label">Xelerate Studio</h4>
+            <p class="contact-val">Riyadh, Saudi Arabia<br />Full address here</p>
+          </div>
+          <div class="contact-block">
+            <h4 class="contact-label">Opening Hours</h4>
+            <p class="contact-val">08:00 AM – 08:00 PM</p>
+            <p class="contact-val">Saturday – Thursday</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CTA BANNER -->
   <section class="cta-section">
     <div class="cta-banner">
@@ -310,5 +367,13 @@
     </div>
   </section>
 
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Replace with Formspree/email action when email is provided
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset();
+    });
+  </script>
 </body>
 </html>
