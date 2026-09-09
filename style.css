@@ -535,6 +535,63 @@ ul { list-style: none; }
   background: rgba(254,205,25,0.06);
 }
 
+/* ── LOCATION ───────────────────────────────────── */
+.location-section {
+  background: #0a0a0a;
+  padding: 100px 60px;
+}
+
+.location-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.location-heading {
+  font-family: var(--font-primary);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--light);
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+
+.location-item svg { flex-shrink: 0; margin-top: 2px; }
+.location-item small { color: rgba(255,255,255,0.4); font-size: 12px; }
+
+.location-map {
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 420px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.location-map iframe { display: block; }
+
 /* ── CTA BANNER ─────────────────────────────────── */
 .cta-section {
   background: var(--dark);
