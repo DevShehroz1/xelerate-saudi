@@ -1331,15 +1331,107 @@ ul { list-style: none; }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-inner { padding: 18px 24px; }
 
+  /* NAV */
+  .nav-links { display: none; }
+  .nav-inner { padding: 18px 20px; }
+
+  /* HERO STATS */
   .stats-bar {
+    position: relative;
     flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    padding: 0 24px 32px;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 24px 32px;
+    bottom: auto;
+  }
+  .stat { gap: 10px; }
+
+  /* SERVICES DIAGRAM → simple card grid */
+  .services { padding: 60px 20px 60px; }
+  .services-header { margin-bottom: 36px; }
+  .services-diagram {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 0;
+  }
+  .services-car { display: none; }
+  .arrow { display: none; }
+  .scard {
+    position: relative;
+    top: auto; left: auto; right: auto; bottom: auto;
+    width: 100%;
   }
 
-  .stat { gap: 10px; }
+  /* SERVICES GALLERY → vertical stack */
+  .sgallery-bar { padding: 60px 20px 40px; }
+  .sgallery-grid {
+    flex-direction: column;
+    height: auto;
+    min-height: unset;
+  }
+  .sgallery-panel { min-height: 200px; flex: none; }
+  .sgallery-panel:hover { flex: none; }
+
+  /* MASTERED SECTION */
+  .mastered-inner {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    gap: 36px;
+  }
+  .mastered-heading { font-size: clamp(32px, 9vw, 48px); }
+
+  /* WHY CHOOSE US */
+  .wcu-section { padding: 60px 20px; }
+  .wcu-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .wcu-hex { width: 160px; height: 160px; }
+
+  /* WHY XELERATE */
+  .why-section { padding: 60px 20px 80px; }
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-card:nth-child(1),
+  .why-card:nth-child(2),
+  .why-card:nth-child(3),
+  .why-card:nth-child(4),
+  .why-card:nth-child(5) { grid-column: 1; }
+
+  /* LOCATION */
+  .location-section { padding: 48px 0 0; }
+  .location-info-row { padding: 0 20px 32px; gap: 24px; }
+
+  /* BOOKING + CONTACT */
+  .booking-section { padding: 60px 20px; }
+  .booking-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* CTA BANNER */
+  .cta-section { padding: 40px 20px; }
+  .cta-banner {
+    min-height: unset;
+    background-position: center;
+  }
+  .cta-text {
+    padding: 40px 28px;
+    max-width: 100%;
+  }
+  .cta-heading { font-size: clamp(28px, 7vw, 40px); }
+
+  /* FOOTER */
+  .site-footer { padding: 0 20px; }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 48px 0 32px;
+  }
+  .footer-brand { grid-column: 1 / -1; }
 }
