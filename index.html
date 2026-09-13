@@ -453,6 +453,20 @@
     }, { threshold: 0.3 });
 
     counters.forEach(el => observer.observe(el));
+
+    // Hex icon pop-in animation
+    const hexes = document.querySelectorAll('.wcu-hex');
+    const hexObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = Array.from(hexes).indexOf(el) * 150;
+          setTimeout(() => el.classList.add('hex-visible'), delay);
+          hexObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+    hexes.forEach(el => hexObserver.observe(el));
   </script>
 </body>
 </html>
