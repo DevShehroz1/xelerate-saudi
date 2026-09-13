@@ -184,7 +184,7 @@ ul { list-style: none; }
 
 .stat {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 14px;
 }
 
@@ -207,7 +207,7 @@ ul { list-style: none; }
 
 /* ── SERVICES SECTION ───────────────────────────── */
 .services {
-  background: #111111;
+  background: #0d0d0d;
   padding: 100px 40px 120px;
 }
 
@@ -566,7 +566,7 @@ ul { list-style: none; }
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 60px;
+  padding: 80px 60px 80px 20px;
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: 60px;
@@ -803,13 +803,13 @@ ul { list-style: none; }
 
 /* ── WHY XELERATE ───────────────────────────────── */
 .why-section {
-  background: #111111;
+  background: #0d0d0d;
   padding: 100px 60px 120px;
   /* subtle radial dot pattern */
   background-image:
     radial-gradient(rgba(254,205,25,0.04) 1px, transparent 1px);
   background-size: 28px 28px;
-  background-color: #111111;
+  background-color: #0d0d0d;
 }
 
 .why-header {
@@ -971,7 +971,7 @@ ul { list-style: none; }
 
 /* ── LOCATION ───────────────────────────────────── */
 .location-section {
-  background: #0a0a0a;
+  background: #0d0d0d;
   padding: 80px 0 0;
 }
 
@@ -1214,7 +1214,7 @@ ul { list-style: none; }
 
 /* ── FOOTER ─────────────────────────────────────── */
 .site-footer {
-  background: #080808;
+  background: #0d0d0d;
   padding: 0 60px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }

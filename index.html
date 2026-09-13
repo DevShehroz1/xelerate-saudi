@@ -46,15 +46,15 @@
     <!-- STATS -->
     <div class="stats-bar">
       <div class="stat">
-        <span class="stat-num">500+</span>
+        <span class="stat-num" data-target="500" data-suffix="+">0+</span>
         <span class="stat-label">Vehicles detailed<br />&amp; shine perfected.</span>
       </div>
       <div class="stat">
-        <span class="stat-num">120+</span>
+        <span class="stat-num" data-target="120" data-suffix="+">0+</span>
         <span class="stat-label">Five-star reviews<br />and counting...</span>
       </div>
       <div class="stat">
-        <span class="stat-num">4.9</span>
+        <span class="stat-num" data-target="4.9" data-suffix="" data-decimals="1">0.0</span>
         <span class="stat-label">Average customer<br />ratings out of 5.00!</span>
       </div>
     </div>
@@ -421,6 +421,41 @@
       document.getElementById('formSuccess').style.display = 'block';
       this.reset();
     });
+  </script>
+
+  <script>
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const duration = 1800;
+
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const decimals = parseInt(el.dataset.decimals || '0');
+      const start = performance.now();
+
+      function step(now) {
+        const elapsed = Math.min(now - start, duration);
+        // ease-out cubic
+        const progress = 1 - Math.pow(1 - elapsed / duration, 3);
+        const value = target * progress;
+        el.textContent = value.toFixed(decimals) + suffix;
+        if (elapsed < duration) requestAnimationFrame(step);
+        else el.textContent = target.toFixed(decimals) + suffix;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
