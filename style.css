@@ -1185,7 +1185,7 @@ ul { list-style: none; }
   font-size: clamp(36px, 4vw, 58px);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--light);
+  color: #fecd19;
 }
 
 .cta-sub {
@@ -1199,17 +1199,23 @@ ul { list-style: none; }
 .cta-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  background: #fecd19;
+  color: #161616;
   font-family: var(--font-secondary);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--light);
-  transition: gap 0.2s, color 0.2s;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 15px 36px;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .cta-link:hover {
-  gap: 12px;
-  color: #fecd19;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 /* ── FOOTER ─────────────────────────────────────── */
