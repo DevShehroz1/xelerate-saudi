@@ -1429,7 +1429,7 @@ ul { list-style: none; }
 
   /* SERVICES GALLERY → vertical stack */
   .sgallery-bar { padding: 40px 20px 28px; }
-  .sgallery-heading { font-size: 26px !important; line-height: 1.15 !important; }
+  .sgallery-heading { font-size: 38px !important; line-height: 1.15 !important; }
   .sgallery-grid {
     flex-direction: column;
     height: auto;
