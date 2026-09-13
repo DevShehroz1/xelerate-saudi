@@ -186,7 +186,7 @@ ul { list-style: none; }
   align-items: flex-end;
   justify-content: center;
   gap: 160px;
-  padding: 0 80px 48px;
+  padding: 0 80px 20px;
 }
 
 .stat {
@@ -1423,6 +1423,9 @@ ul { list-style: none; }
     top: auto; left: auto; right: auto; bottom: auto;
     width: 100%;
   }
+
+  /* SERVICES SECTION HEADING */
+  .section-heading { font-size: 32px !important; line-height: 1.15 !important; }
 
   /* SERVICES GALLERY → vertical stack */
   .sgallery-bar { padding: 40px 20px 28px; }
