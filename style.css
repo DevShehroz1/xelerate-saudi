@@ -1383,7 +1383,7 @@ ul { list-style: none; }
     align-items: center;
     justify-content: space-evenly;
     gap: 0;
-    padding: 72px 0 20px;
+    padding: 160px 0 20px;
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
   }
   .stat {
