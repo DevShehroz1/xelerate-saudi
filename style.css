@@ -1375,6 +1375,7 @@ ul { list-style: none; }
   /* NAV */
   .nav-links { display: none; }
   .nav-inner { padding: 18px 20px; }
+  .btn-book { height: 36px; padding: 0 16px; font-size: 12px; box-shadow: none; }
 
   /* HERO */
   .hero-body { gap: 20px; padding-top: 60px; }
