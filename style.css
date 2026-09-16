@@ -1377,10 +1377,10 @@ ul { list-style: none; }
   .nav-inner { padding: 18px 20px; }
 
   /* HERO */
-  .hero-body { gap: 16px; }
+  .hero-body { gap: 20px; padding-top: 60px; }
   .eyebrow { font-size: 11px; letter-spacing: 0.08em; order: 2; }
   .hero-heading { order: 1; font-size: clamp(32px, 9vw, 52px); }
-  .btn-cta { order: 3; }
+  .btn-cta { order: 3; margin-top: 8px; }
 
   /* HERO STATS */
   .stats-bar {
@@ -1399,7 +1399,7 @@ ul { list-style: none; }
     align-items: center;
     text-align: center;
     gap: 4px;
-    padding: 16px 8px;
+    padding: 16px 14px;
     border-right: 1px solid rgba(255,255,255,0.12);
   }
   .stat:last-child { border-right: none; }
