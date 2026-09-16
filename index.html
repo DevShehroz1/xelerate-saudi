@@ -30,7 +30,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-bg.png">
       <source src="hero-bg.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
@@ -470,6 +470,21 @@
       });
     }, { threshold: 0.3 });
     hexes.forEach(el => hexObserver.observe(el));
+  </script>
+
+  <script>
+    // iOS low-power mode blocks autoplay — catch rejection and swap to poster
+    document.querySelectorAll('video[autoplay]').forEach(function(v) {
+      var p = v.play();
+      if (p !== undefined) {
+        p.catch(function() {
+          v.style.display = 'none';
+          v.parentElement.style.backgroundImage = 'url(' + (v.getAttribute('poster') || '') + ')';
+          v.parentElement.style.backgroundSize = 'cover';
+          v.parentElement.style.backgroundPosition = 'center';
+        });
+      }
+    });
   </script>
 </body>
 </html>
