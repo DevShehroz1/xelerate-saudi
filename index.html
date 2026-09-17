@@ -470,6 +470,18 @@
       });
     }, { threshold: 0.3 });
     hexes.forEach(el => hexObserver.observe(el));
+
+    // Service card scroll-in animation
+    const scards = document.querySelectorAll('.scard');
+    const scardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scard--visible');
+          scardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    scards.forEach(el => scardObserver.observe(el));
   </script>
 
   <script>
