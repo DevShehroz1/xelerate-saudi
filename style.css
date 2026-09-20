@@ -665,7 +665,7 @@ ul { list-style: none; }
 
 .mastered-num {
   font-family: var(--font-primary);
-  font-size: 52px;
+  font-size: clamp(18px, 4.5vw, 52px);
   font-weight: 700;
   color: var(--light);
   line-height: 1;
@@ -673,7 +673,7 @@ ul { list-style: none; }
 
 .mastered-stat-label {
   font-family: var(--font-primary);
-  font-size: 52px;
+  font-size: clamp(18px, 4.5vw, 52px);
   font-weight: 700;
   color: var(--light);
   line-height: 1;
