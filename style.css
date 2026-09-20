@@ -672,10 +672,11 @@ ul { list-style: none; }
 }
 
 .mastered-stat-label {
-  font-family: var(--font-secondary);
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.05em;
+  font-family: var(--font-primary);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1;
 }
 
 .mastered-divider {
