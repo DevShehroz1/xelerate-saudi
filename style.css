@@ -455,6 +455,7 @@ ul { list-style: none; }
 .sgallery-panel {
   position: relative;
   flex: 1;
+  text-decoration: none;
   background-size: cover;
   background-position: center;
   overflow: hidden;

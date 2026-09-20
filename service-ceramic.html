@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceramic Coating — Xelerate</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── SERVICE HERO ── */
+    .svc-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('svc-ceramic.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .svc-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%);
+    }
+    .svc-hero-body {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 120px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .svc-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .svc-hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #f5f5f5;
+    }
+    .svc-hero-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── OVERVIEW ── */
+    .svc-overview {
+      background: #0a0a0a;
+      padding: 100px 60px;
+    }
+    .svc-overview-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .svc-overview-text h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      color: #f5f5f5;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .svc-overview-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .svc-overview-text p:last-child { margin-bottom: 0; }
+    .svc-overview-img {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .svc-overview-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── INCLUDES ── */
+    .svc-includes {
+      background: #0d0d0d;
+      padding: 100px 60px;
+    }
+    .svc-includes-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .svc-section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+    .svc-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700;
+      color: #f5f5f5;
+      margin-bottom: 52px;
+    }
+    .svc-includes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .svc-include-card {
+      background: rgba(20,20,20,0.9);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-left: 3px solid #fecd19;
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+    .svc-include-card h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #f5f5f5;
+      margin-bottom: 10px;
+    }
+    .svc-include-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ── PROCESS ── */
+    .svc-process {
+      background: #0a0a0a;
+      padding: 100px 60px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .svc-process-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .svc-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 52px;
+      position: relative;
+    }
+    .svc-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + 8px);
+      right: calc(12.5% + 8px);
+      height: 1px;
+      background: rgba(254,205,25,0.25);
+    }
+    .svc-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+    .svc-step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(254,205,25,0.10);
+      border: 1px solid rgba(254,205,25,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fecd19;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .svc-step h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #f5f5f5;
+      margin-bottom: 8px;
+    }
+    .svc-step p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+    }
+
+    /* ── CTA STRIP ── */
+    .svc-cta {
+      background: #0a0a0a;
+      padding: 80px 60px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .svc-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      color: #f5f5f5;
+      margin-bottom: 16px;
+    }
+    .svc-cta p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+    }
+    .svc-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffe033 0%, #fecd19 50%, #e8b400 100%);
+      box-shadow: 0 0 20px rgba(254,205,25,0.45), 0 4px 16px rgba(254,205,25,0.25);
+      color: #161616;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      padding: 15px 36px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .svc-cta-btn:hover {
+      box-shadow: 0 0 32px rgba(254,205,25,0.7), 0 6px 20px rgba(254,205,25,0.4);
+      transform: translateY(-1px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .svc-overview { padding: 60px 20px; }
+      .svc-overview-inner { grid-template-columns: 1fr; gap: 36px; }
+      .svc-includes { padding: 60px 20px; }
+      .svc-includes-grid { grid-template-columns: 1fr; }
+      .svc-process { padding: 60px 20px; }
+      .svc-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .svc-steps::before { display: none; }
+      .svc-cta { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0976/3995/6775/files/xelerate-logo-vertical-en.png?v=1788872255" alt="Xelerate" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#location">Our Location</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-book">Book a Detail</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="svc-hero-overlay"></div>
+    <div class="svc-hero-body">
+      <p class="svc-eyebrow">OUR SERVICES</p>
+      <h1 class="svc-hero-title">Ceramic Coating</h1>
+      <p class="svc-hero-tag">Hydrophobic Shield, Lasting Gloss</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="svc-overview">
+    <div class="svc-overview-inner">
+      <div class="svc-overview-text">
+        <h2>Protection That <span class="accent">Bonds for Years</span></h2>
+        <p>Ceramic coating is the most durable form of paint protection available today — and at Xelerate, we apply it with the precision and preparation it demands. Unlike traditional waxes that sit on top of the paint and wash off within weeks, our professional-grade ceramic coating chemically bonds to your vehicle's clear coat at a molecular level, forming a permanent, glass-like layer that repels water, blocks UV rays, and resists chemical contamination. The result is a finish that stays cleaner for longer and looks better with every wash.</p>
+        <p>Every ceramic coating we perform begins with a thorough decontamination and paint correction stage, ensuring there are zero imperfections locked under the coating. Applied inside our climate-controlled studio and cured under controlled conditions, our coatings deliver years of protection — not months. Whether you drive a daily commuter or a weekend exotic, a Xelerate ceramic coating is the smartest long-term investment you can make for your paintwork.</p>
+      </div>
+      <div class="svc-overview-img">
+        <img src="https://images.unsplash.com/photo-1616455579100-2ceaa4eb2d37?auto=format&fit=crop&w=800&q=80" alt="Ceramic Coating" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="svc-includes">
+    <div class="svc-includes-inner">
+      <p class="svc-section-label">What's Included</p>
+      <h2 class="svc-section-title">A Complete <span class="accent">Coating Package</span></h2>
+      <div class="svc-includes-grid">
+        <div class="svc-include-card">
+          <h4>Paint Decontamination</h4>
+          <p>A full chemical and clay-bar decontamination removes iron fallout, tar, and bonded contaminants, leaving the surface perfectly clean and ready for polishing.</p>
+        </div>
+        <div class="svc-include-card">
+          <h4>Paint Correction</h4>
+          <p>Light to moderate machine polishing removes swirl marks and surface defects so the coating bonds over a flawless finish, maximising depth and reflectivity.</p>
+        </div>
+        <div class="svc-include-card">
+          <h4>Surface Prep &amp; IPA Wipe-Down</h4>
+          <p>The paintwork is wiped down with an isopropyl alcohol solution to strip all polish residue and surface oils, ensuring a completely clean bonding surface for the coating.</p>
+        </div>
+        <div class="svc-include-card">
+          <h4>Ceramic Coating Application</h4>
+          <p>Professional-grade ceramic coating is hand-applied panel by panel using dedicated applicator pads, ensuring uniform, streak-free coverage across the entire vehicle.</p>
+        </div>
+        <div class="svc-include-card">
+          <h4>Flash &amp; Cure</h4>
+          <p>The coating is allowed to flash to the surface under controlled studio conditions before being levelled with a microfiber cloth, initiating the cross-linking curing process.</p>
+        </div>
+        <div class="svc-include-card">
+          <h4>Hydrophobic Topper Coat</h4>
+          <p>A final ceramic-infused topper layer is applied to boost water-beading behaviour, add slickness, and enhance the depth of gloss immediately after the base coating cures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="svc-process">
+    <div class="svc-process-inner">
+      <p class="svc-section-label">Our Process</p>
+      <h2 class="svc-section-title">How We Work</h2>
+      <div class="svc-steps">
+        <div class="svc-step">
+          <div class="svc-step-num">01</div>
+          <h4>Decontamination</h4>
+          <p>The vehicle is fully decontaminated chemically and mechanically to ensure zero surface contamination before any correction or coating work begins.</p>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">02</div>
+          <h4>Correction</h4>
+          <p>Paint defects are removed with machine polishing so the coating bonds over a defect-free surface, locking in maximum gloss and clarity.</p>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">03</div>
+          <h4>Application</h4>
+          <p>The ceramic coating is applied panel by panel under controlled studio lighting, with careful levelling to ensure uniform bonding across every painted surface.</p>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">04</div>
+          <h4>Curing</h4>
+          <p>The coated vehicle is kept in our studio during the initial cure phase, then handed back with a full care guide outlining how to maintain the coating's performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="svc-cta">
+    <h2>Ready to Book?</h2>
+    <p>Fill in your details and we'll get back to you within 24 hours.</p>
+    <a href="index.html#contact" class="svc-cta-btn">Book a Detail</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="https://cdn.shopify.com/s/files/1/0976/3995/6775/files/xelerate-logo-vertical-en.png?v=1788872255" alt="Xelerate" class="footer-logo-img" />
+        </a>
+        <p class="footer-tagline">Turning Road Wear Into Road Stare. Precision detailing, premium protection, and craftsmanship without shortcuts.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Sitemap</p>
+        <ul class="footer-links">
+          <li><a href="index.html#contact">Contact Us</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#location">Our Location</a></li>
+          <li><a href="index.html#contact">Book a Detail</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="service-exterior.html">Exterior Detailing</a></li>
+          <li><a href="service-interior.html">Interior Detailing</a></li>
+          <li><a href="service-ceramic.html">Ceramic Coating</a></li>
+          <li><a href="service-correction.html">Paint Correction</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Contact Details</p>
+        <ul class="footer-links">
+          <li><span>Riyadh, Saudi Arabia</span></li>
+          <li><a href="mailto:hello@xelerate.sa">hello@xelerate.sa</a></li>
+          <li><a href="tel:+966000000000">+966 XX XXX XXXX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-sep"></div>
+      <p class="footer-copy">&copy;2026 Xelerate. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
