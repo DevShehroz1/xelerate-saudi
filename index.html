@@ -485,6 +485,13 @@
   </script>
 
   <script>
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+
+  <script>
     // iOS low-power mode blocks autoplay — catch rejection and swap to poster
     document.querySelectorAll('video[autoplay]').forEach(function(v) {
       var p = v.play();
