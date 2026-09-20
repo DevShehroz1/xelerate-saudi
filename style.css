@@ -677,6 +677,7 @@ ul { list-style: none; }
   font-weight: 700;
   color: var(--light);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .mastered-divider {
