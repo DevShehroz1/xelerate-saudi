@@ -1293,10 +1293,7 @@ ul { list-style: none; }
 
 /* ── FOOTER ─────────────────────────────────────── */
 .site-footer {
-  background:
-    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(254,205,25,0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(254,205,25,0.04) 0%, transparent 70%),
-    #0d0d0d;
+  background: linear-gradient(to bottom, #161616 0%, #0a0a0a 100%);
   padding: 0 60px;
   border-top: 1px solid rgba(254,205,25,0.1);
 }
