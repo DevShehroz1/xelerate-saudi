@@ -152,56 +152,6 @@
     }
 
     /* ── PROCESS ── */
-    .svc-process {
-      background: #0a0a0a;
-      padding: 100px 60px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .svc-process-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .svc-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      margin-top: 52px;
-      position: relative;
-    }
-    .svc-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: calc(12.5% + 8px);
-      right: calc(12.5% + 8px);
-      height: 1px;
-      background: rgba(254,205,25,0.25);
-    }
-    .svc-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 16px;
-      position: relative;
-    }
-    .svc-step-num {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(254,205,25,0.10);
-      border: 1px solid rgba(254,205,25,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fecd19;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
     .svc-step h4 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 16px;
@@ -263,9 +213,6 @@
       .svc-overview-inner { grid-template-columns: 1fr; gap: 36px; }
       .svc-includes { padding: 60px 20px; }
       .svc-includes-grid { grid-template-columns: 1fr; }
-      .svc-process { padding: 60px 20px; }
-      .svc-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .svc-steps::before { display: none; }
       .svc-cta { padding: 60px 20px; }
     }
   </style>
@@ -346,34 +293,6 @@
   </section>
 
   <!-- PROCESS -->
-  <section class="svc-process">
-    <div class="svc-process-inner">
-      <p class="svc-section-label">Our Process</p>
-      <h2 class="svc-section-title">How We Work</h2>
-      <div class="svc-steps">
-        <div class="svc-step">
-          <div class="svc-step-num">01</div>
-          <h4>Vacuuming</h4>
-          <p>We begin with a full vacuum and blow-out of the entire cabin, clearing all loose debris before any wet products are applied to any surface.</p>
-        </div>
-        <div class="svc-step">
-          <div class="svc-step-num">02</div>
-          <h4>Deep Clean</h4>
-          <p>Surfaces are cleaned with the appropriate product for each material — steam for hard surfaces, shampoo extraction for fabric, and dedicated cleaners for leather.</p>
-        </div>
-        <div class="svc-step">
-          <div class="svc-step-num">03</div>
-          <h4>Conditioning</h4>
-          <p>Leather is conditioned, plastic trim is dressed, and fabric is treated with a fabric protector to repel future stains and keep surfaces looking fresh longer.</p>
-        </div>
-        <div class="svc-step">
-          <div class="svc-step-num">04</div>
-          <h4>Final Inspection</h4>
-          <p>We perform a detailed walkthrough under bright lighting to verify every surface is clean, dry, and correctly treated before the vehicle is returned to you.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CTA -->
   <section class="svc-cta">
